@@ -1,0 +1,121 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "14046013",
+      "name": "加",
+      "font_class": "tianjia",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "14046018",
+      "name": "减",
+      "font_class": "jian",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "14046405",
+      "name": "错误",
+      "font_class": "cuowu",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "14046406",
+      "name": "成功",
+      "font_class": "chenggong",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "14046409",
+      "name": "上升",
+      "font_class": "shangsheng",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "14046411",
+      "name": "右箭头",
+      "font_class": "youjiantou",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "14046412",
+      "name": "左箭头",
+      "font_class": "zuojiantou",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "14055534",
+      "name": "更多",
+      "font_class": "gengduo1",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "14055535",
+      "name": "分享",
+      "font_class": "fenxiang",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "14055536",
+      "name": "更多",
+      "font_class": "gengduo",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "14055555",
+      "name": "设置",
+      "font_class": "shezhi",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "14055558",
+      "name": "购物车",
+      "font_class": "gouwuche",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "14055572",
+      "name": "头像",
+      "font_class": "touxiang",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "14055575",
+      "name": "删除",
+      "font_class": "shanchu",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "14055576",
+      "name": "我的",
+      "font_class": "wode",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "14055579",
+      "name": "我的",
+      "font_class": "wode1",
+      "unicode": "e61b",
+      "unicode_decimal": 58907
+    }
+  ]
+}

@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 
 const home = r => require.ensure([],()=> r(require('../views/Home')),'home')
 const about = r => require.ensure([],()=> r(require('../views/About.vue')),'about')
+const login = r => require.ensure([],()=> r(require('../views/login/login')),'login')
 
 Vue.use(VueRouter)
 
@@ -17,11 +18,16 @@ const routes = [
     path: '/about',
     name: 'About',
     component: about
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: login
   }
 ]
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: 'hash',
   base: process.env.BASE_URL,
   routes
 })
