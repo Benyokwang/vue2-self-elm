@@ -5,8 +5,8 @@
     <section class="head_goback" v-if="goBack" @click="$router.go(-1)">
       <!-- <svg class="icon" aria-hidden="true">
         <use xlink:href="#icon-icon-zuojiantou"/>
-      </svg> -->
-		<i class="iconfont icon-zuojiantou"></i>
+      </svg>-->
+      <i class="iconfont icon-zuojiantou"></i>
     </section>
     <router-link to="login" class="head_login" v-if="isLogin">
       <span>登录 | 注册</span>
@@ -26,11 +26,10 @@ export default {
 <style lang="scss" scoped>
 @import "../style/sCommon.scss";
 .header {
-  position: fixed;
-  left: 0;
-  top: 0;
+  position: relative;
   background: $blue;
-  @include wh(100%, 1.95rem);
+  height: 2.2rem;
+  @include wh(100%, 2.2rem);
 }
 .head_login > span {
   right: -1rem;
@@ -38,6 +37,7 @@ export default {
   @include ct;
 }
 .head_goback {
+  float: left;
   left: 0.4rem;
   line-height: 2.2rem;
   margin-left: 0.4rem;
@@ -46,11 +46,13 @@ export default {
 }
 .title_head {
   text-align: center;
+  line-height: 2.2rem;
   span {
-    @include sc(1rem, #fff);
+    font-weight: bold;
+    @include sc(0.9rem, #fff);
   }
 }
 .icon-zuojiantou {
-	@include sc(0.7rem,#fff)
+  @include sc(0.7rem, #fff);
 }
 </style>

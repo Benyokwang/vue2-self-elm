@@ -5,8 +5,7 @@
 </template>
 
 <style lang="scss">
-
-// 引入iconfont
-  @import './style/common';
-
+  #app {
+    background: #f5f5f5;
+  }
 </style>

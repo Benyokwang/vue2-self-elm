@@ -1,9 +1,9 @@
 <template>
   <div class="home">
     <!-- head -->
-    <!-- <TopHead class="header">
+    <TopHead class="header" isLogin="true">
       <span slot="logo" class="logo" @click="toManManBuy">muaMai</span>
-    </TopHead> -->
+    </TopHead>
     <!-- location -->
     <nav class="city">
       <div class="right_location">
@@ -18,12 +18,12 @@
 </template>
 
 <script>
-// import TopHead from "../components/header";
+import TopHead from "../components/header";
 
 export default {
   name: "Home",
   components: {
-    // TopHead
+    TopHead
   },
   methods: {
     toManManBuy() {
@@ -35,25 +35,26 @@ export default {
 
 <style lang="scss" scoped>
 @import "../style/sCommon";
-.header .logo {
-  left: 1rem;
-  @include sc(1rem, #fff);
-  @include wh(1rem, 1rem);
-  @include ct;
+.header {
+  .logo {
+    position: absolute;
+    top: 25%;
+    left: 0.5rem;
+    @include sc(0.8rem, #fff);
+  }
 }
 .city {
-  margin: 1rem 0.5rem;
-}
-.right_location {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.right_location span:nth-child(1) {
-  @include sc(1rem, #444);
-}
-.right_location span:nth-child(2) {
-  font-weight: bold;
-  @include sc(0.8rem, #888);
+  .right_location {
+    display: flex;
+    justify-content: space-between;
+    margin-top: .3rem;
+    padding: 0.3rem;
+    span:nth-child(1){
+      @include sc(0.6rem,#444);
+    }
+    span:nth-child(2){
+      @include sc(0.5rem,#666);
+    }
+  }
 }
 </style>
