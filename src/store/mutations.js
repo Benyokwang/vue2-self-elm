@@ -1,7 +1,11 @@
+import {
+    GET_USERINFO
+} from './mutations-type'
+
 export default {
-    // 保存用户数据
-    setUserInfo(state,data){
-        state.setUserInfo = data
-        console.log(state.setUserInfo)
+    // 存储用户信息到vuex
+    [GET_USERINFO](state,info){
+        state.userInfo = info,
+        state.login = true
     }
 }
