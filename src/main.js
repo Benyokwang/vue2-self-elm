@@ -13,11 +13,12 @@ import 'element-ui/lib/theme-chalk/index.css';
 //注册组件库
 Vue.use(ElementUI);
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
-axios.defaults.baseURL = "https://elm.cangdu.org"
+axios.defaults.baseURL = "https://elm.cangdu.org";
+axios.defaults.withCredentials = true;
 
-Vue.prototype.$axios = axios
+Vue.prototype.$axios = axios;
 
 new Vue({
   router,

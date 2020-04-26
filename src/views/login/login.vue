@@ -20,7 +20,7 @@
             </section>
             <section class="login_item">
                 <div class="captcha_item">
-                    <input class="login_input" type="text" placeholder="验证码" />
+                    <input v-model="captcha_code" class="login_input" type="text" placeholder="验证码" />
                     <img class="captcha" :src="captchaCode" alt />
                     <span class="changeImg" @click="getCaptcha">看不清 换一张</span>
                 </div>
@@ -42,6 +42,7 @@ export default {
             captchaCode: "", //验证码地址
             account: '', //账号
             pwd: '', //密码
+            captcha_code: '', //验证码
         };
     },
     components: {
@@ -51,21 +52,36 @@ export default {
         switch_type() {
             this.showPassWord = !this.showPassWord;
         },
-        getCaptcha() {
-            this.$axios({
-                url: "/v1/captchas",
-                method: "post"
-            }).then(res => {
-                console.log(res);
-                this.captchaCode = res.data.code;
-            });
+        async getCaptcha() {
+            let res = await this.$store.dispatch('getCaptcha')
+            this.captchaCode = res.data.code
         },
-        login(){
+        async login(){
             let data = {
-                account: this.account,
-                password: this.pwd
+                username: this.account,
+                password: this.pwd,
+                captcha_code: this.captcha_code
+            }
+            for(var a in data){
+                if(data[a]==''){
+                    this.$message({
+                        message: '请补全信息',
+                        type: 'warning',
+                        offset: 0
+                    })
+                    return
+                }
             }
             console.log(data)
+            let res = await this.$store.dispatch('login',data)
+            console.log(res)
+            if(res && res.status==0){
+                this.$message({message:res.message,type:'warning'})
+                return;
+            }else {
+                this.$message({message:'登录成功',type:'success'})
+                this.$router.push('/')
+            }
         }
     },
     mounted() {
