@@ -7,6 +7,8 @@ const about = r => require.ensure([],()=> r(require('../views/About.vue')),'abou
 const login = r => require.ensure([],()=> r(require('../views/login/login')),'login')
 const profile = r => require.ensure([],()=> r(require('../views/admin/profile')),'profile')
 const city = r => require.ensure([],()=> r(require('../views/city/city')),'city')
+const shopList = r => require.ensure([],()=> r(require('../views/shop/shopList.vue')),'shopList')
+const searchPage = r => require.ensure([],()=> r(require('../views/search/search.vue')),'searchPage')
 
 Vue.use(VueRouter)
 
@@ -35,6 +37,16 @@ const routes = [
     path: '/city/:cityId',
     name: 'City',
     component: city
+  },
+  {
+    path: '/shopList/',
+    name: 'shopList',
+    component: shopList
+  },
+  {
+    path: '/searchPage/',
+    name: 'searchPage',
+    component: searchPage
   }
 ]
 

@@ -3,6 +3,9 @@
         <section class="head_goback" v-if="goBack" @click="$router.go(-1)">
             <i class="iconfont icon-zuojiantou"></i>
         </section>
+        <section class="search" v-if="seach" :to="'/seachPage'">
+            <i class=""></i>
+        </section>
         <slot name="logo"></slot>
         <slot name="search"></slot>
         <slot name="city"></slot>
