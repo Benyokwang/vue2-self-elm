@@ -6,6 +6,7 @@ const home = r => require.ensure([],()=> r(require('../views/Home')),'home')
 const about = r => require.ensure([],()=> r(require('../views/About.vue')),'about')
 const login = r => require.ensure([],()=> r(require('../views/login/login')),'login')
 const profile = r => require.ensure([],()=> r(require('../views/admin/profile')),'profile')
+const city = r => require.ensure([],()=> r(require('../views/city/city')),'city')
 
 Vue.use(VueRouter)
 
@@ -29,6 +30,11 @@ const routes = [
     path: '/profile',
     name: 'Profile',
     component: profile
+  },
+  {
+    path: '/city/:cityId',
+    name: 'City',
+    component: city
   }
 ]
 

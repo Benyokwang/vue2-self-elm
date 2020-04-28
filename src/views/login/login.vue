@@ -34,6 +34,7 @@
 
 <script>
 import TopHead from "../../components/header";
+import {captcha} from '../../common/api'
 
 export default {
     data() {
@@ -53,7 +54,7 @@ export default {
             this.showPassWord = !this.showPassWord;
         },
         async getCaptcha() {
-            let res = await this.$store.dispatch('getCaptcha')
+            let res = await captcha()
             this.captchaCode = res.data.code
         },
         async login(){
