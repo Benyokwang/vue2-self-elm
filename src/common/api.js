@@ -23,11 +23,21 @@ async function searchCityById(id){
 async function searchPlace(id,keyword){
     return await axios(`/v1/pois?city_id=${id}&keyword=${keyword}&type=search`)
 }
+// 根据经纬度定位
+async function exactLocation(geohash){
+    return await axios(`/v2/pois/${geohash}`)
+}
+// 获取推荐分类
+async function recCategory(){
+    return await axios('/v2/index_entry')
+}
 
 export {
     captcha,
     getHotCities,
     getAllCities,
     searchCityById,
-    searchPlace
+    searchPlace,
+    exactLocation,
+    recCategory
 }

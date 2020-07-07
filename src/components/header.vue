@@ -1,16 +1,22 @@
 <template>
     <header class="header">
         <section class="head_goback" v-if="goBack" @click="$router.go(-1)">
-            <i class="iconfont icon-zuojiantou"></i>
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-zuojiantou" />
+            </svg>
         </section>
-        <section class="search" v-if="seach" :to="'/seachPage'">
-            <i class=""></i>
+        <section class="search" v-if="search" :to="'/seachPage'">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-sousuo" />
+            </svg>
         </section>
         <slot name="logo"></slot>
         <slot name="search"></slot>
         <slot name="city"></slot>
         <router-link :to="userInfo? '/profile' : '/login'" class="head_login" v-if="isLogin">
-            <i class="iconfont icon-touxiang" v-if="userInfo"></i>
+            <svg class="icon" aria-hidden="true" v-if="userInfo">
+                <use xlink:href="#icon-touxiang" />
+            </svg>
             <span v-else>登录 | 注册</span>
         </router-link>
         <section class="title_head" v-if="title_head">
@@ -22,22 +28,18 @@
 
 <script>
 // 取出用户数据
-import { mapActions,mapState } from "vuex";
+import { mapActions, mapState } from "vuex";
 
 export default {
-    props: ["title_head", "goBack", "isLogin"],
-    mounted(){
-        this.getUserInfo()
+    props: ["title_head", "goBack", "isLogin", "search","city"],
+    mounted() {
+        this.getUserInfo();
     },
     computed: {
-        ...mapState([
-            'userInfo'
-        ])
+        ...mapState(["userInfo"])
     },
     methods: {
-        ...mapActions([
-            'getUserInfo'
-        ])
+        ...mapActions(["getUserInfo"])
     }
 };
 </script>
@@ -46,7 +48,7 @@ export default {
 @import "../style/sCommon.scss";
 .header {
     display: flex;
-    padding: 0 .5rem;
+    padding: 0 0.5rem;
     justify-content: space-between;
     align-items: center;
     background: $blue;
@@ -54,11 +56,14 @@ export default {
     @include wh(100%, 2.2rem);
 }
 .head_login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     .icon-touxiang {
-        @include sc(1rem,#fff)
+        @include sc(1rem, #fff);
     }
     span {
-        @include sc(.7rem,#fff)
+        @include sc(0.7rem, #fff);
     }
 }
 .head_goback {

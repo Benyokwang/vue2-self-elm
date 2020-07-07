@@ -3,7 +3,8 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import axios from 'axios'
-import ElementUI from 'element-ui';
+import ElementUI from 'element-ui'
+import icon from './style/iconfont'
 import './config/rem'
 import './style/common.scss'
 import './style/sCommon.scss'
@@ -17,8 +18,8 @@ Vue.config.productionTip = false;
 
 axios.defaults.baseURL = "https://elm.cangdu.org";
 axios.defaults.withCredentials = true;
-
 Vue.prototype.$axios = axios;
+icon.mounted();
 
 new Vue({
   router,
