@@ -2,13 +2,13 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 // import Home from '../views/Home.vue'
 
-const home = r => require.ensure([],()=> r(require('../views/Home')),'home')
-const about = r => require.ensure([],()=> r(require('../views/About.vue')),'about')
-const login = r => require.ensure([],()=> r(require('../views/login/login')),'login')
-const profile = r => require.ensure([],()=> r(require('../views/admin/profile')),'profile')
-const city = r => require.ensure([],()=> r(require('../views/city/city')),'city')
-const shopList = r => require.ensure([],()=> r(require('../views/shop/shopList.vue')),'shopList')
-const searchPage = r => require.ensure([],()=> r(require('../views/search/search.vue')),'searchPage')
+const home = r => require.ensure([],()=> r(require('../views/Home')),'home')  //主页
+const about = r => require.ensure([],()=> r(require('../views/About.vue')),'about') //
+const login = r => require.ensure([],()=> r(require('../views/login/login')),'login') //登录
+const profile = r => require.ensure([],()=> r(require('../views/admin/profile')),'profile') //个人信息
+const city = r => require.ensure([],()=> r(require('../views/city/city')),'city') //城市列表
+const shopList = r => require.ensure([],()=> r(require('../views/shop/shopList.vue')),'shopList') //商铺列表
+const searchPage = r => require.ensure([],()=> r(require('../views/search/search.vue')),'searchPage') //搜索页
 
 Vue.use(VueRouter)
 
